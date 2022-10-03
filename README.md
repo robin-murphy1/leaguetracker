@@ -1,6 +1,6 @@
-#League Rankings Tracker
+# League Rankings Tracker
 
-##Description
+## Description
 
 The "League Rankings Tracker"(LRT) is a Java console application that ingests data either by uploading a file 
 or entering the data on command line. Once all the data has been uploaded LRT will then process
@@ -9,7 +9,7 @@ pts for a loss.
 The results will be ordered from the highest to lowest ranking. If teams have same rankings the teams will be alphabetically
 ordered  
 
-###Pre-requisites
+### Pre-requisites
 The LRT has been tested on MacOS & Ubuntu 20 with the following software versions installed:
 * Java >= 11
 * git >= 2.30
