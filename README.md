@@ -15,37 +15,40 @@ The LRT has been tested on MacOS & Ubuntu 20 with the following software version
 * git >= 2.30
 * mvn >= 3.02
  
-###Install application
-Download the source from github <githublink>
+### Install application
+Download the source from github <https://github.com/robin-murphy1/leaguetracker.git>
 ``` 
-git clone
+git clone https://github.com/robin-murphy1/leaguetracker.git
 ```
 From the PROJECT_HOME dir run mvn package to generate an executable jar file
 ```$xslt
 mvn clean package
 ```
-Location of artifact will be found in PROJECT_HOME/target/LeagueTracker-1.0-SNAPSHOT.jar
+Location of artifact will be found in PROJECT_HOME/target/LeagueTracker-1.0-jar-with-dependencies.jar
 
 
-###Run the app
+### Run the app
+Although LRT has been built & tested in a MacOS/Linux platform, the executable jar has been built with
+it's dependencies & has been tested on a Windows platform
+
 Application can be run using the mvn command or running the executable
-mvn
+jar
 ```$xslt
  mvn -e exec:java  -Dexec.mainClass=com.span.devtest.LeagueTrackerApp 
 ```
 
 Executable jar file
 ```$xslt
- java -jar <JAR_LOCATION_PATH>/LeagueTracker-1.0-SNAPSHOT.jar
+ java -jar <JAR_LOCATION_PATH>/LeagueTracker-1.0-jar-with-dependencies.jar
 ```
 
-User will be prompted input option
-'F' for file upload
-'I' to input values on console
+User will be prompted for input option  
+'**F**' for file upload   
+'**I**' to input values on console   
 
-File Upload
-If environment variable(SCAN_DATA_DIR) is set to a location where data files 
-are stored the user only needs to enter the filename. If not set the full path needs to be entered when prompted
+**File Upload**   
+If environment variable(**SCAN_DATA_DIR**) is set to a location where data files 
+are stored, the user only needs to enter the filename. If not set, the full path needs to be entered when prompted
 
 To set env $SCAN_DATA_DIR. From terminal enter:
 ```$xslt
@@ -60,14 +63,14 @@ Tarantulas 3, Snakes 1
 Lions 4, Grouches 0
 ```
 
-Console Input   
+**Console Input**   
 Data must be entered in the following format. Hit return key after each line
 ```$xslt
 Lions 3, Snakes 3
 ```
-To exit the data capture, hit Enter on a blank line or type 'exit'
+To exit the data capture, hit **Enter** on a blank line or type '**exit**'
 
-Results output  
+**Results output**  
 Once the data has been captured the data will be processed and results displayed in the following format
 ```$xslt
 1. Tarantulas, 6 pts
@@ -77,9 +80,19 @@ Once the data has been captured the data will be processed and results displayed
 4. Grouches, 0 pts
 ```
 
-###Notes
-It is assumed that all data inputted into the application (either by file or via console) will be in the correct format. 
-Therefore, for the purpose of this assessment exception handling has not been done to handle input in incorrect formats 
+### Tests
+Test cases are included in source `<PROJECT_HOME>/src/test/java` and the test data files
+`<PROJECT_HOME>/src/test/resources/data`  
+Some mvn commands to run tests:   
+```$xslt
+$ mvn test
+$ mvn -Dtest=<testname> test
+```
+
+### Notes
+* It is assumed that all data inputted into the application (either by file or via console) will be in the correct format. 
+Therefore, for the purpose of this assessment exception handling has not been done to handle input in incorrect formats   
+
 
 
 
